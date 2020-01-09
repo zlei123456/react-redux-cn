@@ -1,6 +1,7 @@
 import { bindActionCreators } from 'redux'
 import { wrapMapToPropsConstant, wrapMapToPropsFunc } from './wrapMapToProps'
 
+// 如果map是函数
 export function whenMapDispatchToPropsIsFunction(mapDispatchToProps) {
   return typeof mapDispatchToProps === 'function'
     ? wrapMapToPropsFunc(mapDispatchToProps, 'mapDispatchToProps')
@@ -13,6 +14,7 @@ export function whenMapDispatchToPropsIsMissing(mapDispatchToProps) {
     : undefined
 }
 
+// map是object
 export function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
   return mapDispatchToProps && typeof mapDispatchToProps === 'object'
     ? wrapMapToPropsConstant(dispatch =>

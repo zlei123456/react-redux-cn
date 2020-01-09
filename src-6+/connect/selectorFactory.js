@@ -55,6 +55,7 @@ export function pureFinalPropsSelectorFactory(
     if (mapStateToProps.dependsOnOwnProps)
       stateProps = mapStateToProps(state, ownProps)
 
+      // 只有第一次执行才需要mapDispatchToProps
     if (mapDispatchToProps.dependsOnOwnProps)
       dispatchProps = mapDispatchToProps(dispatch, ownProps)
 
@@ -121,6 +122,7 @@ export default function finalPropsSelectorFactory(
     initMapStateToProps = function initProxySelector(dispatch, { displayName }) 《warpMapToProps.js》
 
     获得你在container中定义的mapStateToProps mapDispatchToProps  或的key to function 的map ,通过key可以得到state值和diapatch的函数
+    获得、mapStateToProps mapDispatchToProps 执行函数
   */
  const mapStateToProps = initMapStateToProps(dispatch, options)
   const mapDispatchToProps = initMapDispatchToProps(dispatch, options)

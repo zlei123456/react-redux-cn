@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { ReactReduxContext } from './Context'
 
+// Context.Provider的封装。
 class Provider extends Component {
   constructor(props) {
     super(props)
@@ -33,6 +34,7 @@ class Provider extends Component {
     }
   }
 
+  // 订阅store数据变化
   subscribe() {
     const { store } = this.props
 

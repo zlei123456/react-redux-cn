@@ -69,6 +69,8 @@ export function createConnect({
       ...extraOptions
     } = {}
   ) {
+
+    // 匹配执行函数
     const initMapStateToProps = match(
       mapStateToProps,
       mapStateToPropsFactories,
